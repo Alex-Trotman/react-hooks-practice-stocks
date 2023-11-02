@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function handleClick(){
-  console.log('Clicked!')
-}
-
-function Stock({name, price}) {
+function Stock({ name, price, handleClick }) {
+  // const [isOn, setIsOn] = useState(false);
+  // function handleClick() {
+  //   console.log("Clicked!");
+  //   setIsOn(!isOn);
+  // }
   return (
-    <div onClick={handleClick}>
+    <div>
       <div className="card">
-        <div className="card-body">
+        <div className="card-body" onClick={() => handleClick(name)}>
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{price}</p>
         </div>
